@@ -165,7 +165,7 @@ async def imagem(ctx):
             await ctx.send(f"Recebi a imagem {attachment.filename}! Agora, deixa eu pensar...")
 
         try:
-            class_name, confidence_score = detect_image(file_path)
+            class_name, confidence_score = detect_image(file_path, "keras_model.h5", "labels.txt")
             percentage = confidence_score * 100
             await ctx.send(f"Isso deve ser um **{class_name}** (Certeza: {percentage :.2f})")
 
